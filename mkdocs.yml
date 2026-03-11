@@ -2,6 +2,8 @@ site_name: Harudog's Note
 site_description: Harudog's Learning Note and His Learning Resources
 site_author: Harudog, the happy puppy
 
+site-url: https://harudogmyland.github.io/economics-tutorial/
+
 theme:
   name: material
   features:
@@ -139,10 +141,10 @@ nav:
     - 中央银行: finance/finance9.md
     - 货币供需: finance/finance10.md
   
-  - 计量经济:
-    - 计量导论: econometrics/econo1.md
+  # - 计量经济:
+    # - 计量导论: econometrics/econo1.md
 
-  - 宏观经济:
-    - 宏观导论: macroeco/tutorial1.md
+  # - 宏观经济:
+    # - 宏观导论: macroeco/tutorial1.md
     
   - About: about.md
