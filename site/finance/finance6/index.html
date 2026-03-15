@@ -1,0 +1,1689 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Harudog's Learning Note and His Learning Resources">
+      
+      
+        <meta name="author" content="Harudog, the happy puppy">
+      
+      
+      
+        <link rel="prev" href="../finance5/">
+      
+      
+        <link rel="next" href="../finance7/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>资产定价 - Harudog's Note</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config",""),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Harudog&#39;s Note" class="md-header__button md-logo" aria-label="Harudog's Note" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Harudog's Note
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              资产定价
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../microeco/tutorial1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  微观经济
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../finance1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  金融学
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Harudog&#39;s Note" class="md-nav__button md-logo" aria-label="Harudog's Note" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    Harudog's Note
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    微观经济
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            微观经济
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microeco/tutorial1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    微观经济学导入
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microeco/tutorial2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    消费者理论一
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microeco/tutorial3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    消费者理论二
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microeco/tutorial4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    消费者理论三
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microeco/tutorial5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    消费者理论四
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microeco/tutorial6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    消费者理论与市场
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microeco/tutorial7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    生产者理论一
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microeco/tutorial8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    生产者理论二
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microeco/tutorial9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    生产者理论三
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microeco/tutorial10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    生产者理论四
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microeco/tutorial11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    其他一
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    金融学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            金融学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../finance1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    金融导论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../finance2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    金融货币
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../finance3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    金融外汇
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../finance4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    金融信用
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../finance5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    利息利率
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    资产定价
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    资产定价
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      章节概览
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      金融资产收益和风险（重点）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="金融资产收益和风险（重点）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      金融资产度量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      现代投资组合理论
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      利率与有价证券价值评估（重点）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="利率与有价证券价值评估（重点）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      有价证券价值评估原理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      绝对价值评估与相对价值评估
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      金融市场定价模型（重点）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="金融市场定价模型（重点）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      马科维茨模型 MPT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capm" class="md-nav__link">
+    <span class="md-ellipsis">
+      资本资产定价模型 CAPM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      有效市场假说
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apt" class="md-nav__link">
+    <span class="md-ellipsis">
+      套利定价理论 APT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ff" class="md-nav__link">
+    <span class="md-ellipsis">
+      FF三因子模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../finance7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    金融机构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../finance8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    金融市场
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../finance9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    中央银行
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../finance10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    货币供需
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      章节概览
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      金融资产收益和风险（重点）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="金融资产收益和风险（重点）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      金融资产度量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      现代投资组合理论
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      利率与有价证券价值评估（重点）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="利率与有价证券价值评估（重点）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      有价证券价值评估原理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      绝对价值评估与相对价值评估
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      金融市场定价模型（重点）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="金融市场定价模型（重点）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      马科维茨模型 MPT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capm" class="md-nav__link">
+    <span class="md-ellipsis">
+      资本资产定价模型 CAPM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      有效市场假说
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apt" class="md-nav__link">
+    <span class="md-ellipsis">
+      套利定价理论 APT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ff" class="md-nav__link">
+    <span class="md-ellipsis">
+      FF三因子模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">利率与金融资产定价<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">章节概览<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>金融资产定价原理</li>
+<li>证券定价</li>
+</ul>
+<p>这一节内容繁多，而且全都是重点，因此我们单独拎出来进行复习。</p>
+<h2 id="_3">金融资产收益和风险（重点）<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>利率是金融资产定价基准因素，是连接金融资产未来现金流和当前资产价格的纽带。</p>
+<p>金融资产持有者的收益包括利息，股息与红利等现金流收益与资产买卖价格差收益。同时，也面临着未来收益与损失的不确定性——即风险。风险分为系统风险和非系统风险。</p>
+<h3 id="_4">金融资产度量<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>回顾一下收益率的计算</p>
+<ol>
+<li>收益率度量</li>
+</ol>
+<p>对于任何一种资产或者投资，其当前价值就是未来所有现金流贴现和：
+$$
+P_0 = \sum^T_{i=1}\frac{C_i}{(1+r)^i}
+$$
+因此，一年收益率：
+$$
+r=\frac{C}{P_0}+\frac{P_1-P_0}{P_0}
+$$
+债券定价为 
+$$
+\sum^T_{i=1}\frac{C}{(1+y_{TM})^i}+\frac{FV}{(1+y_{TM})^T}=P
+$$</p>
+<ol>
+<li>非组合投资收益风险</li>
+</ol>
+<p>预期收益率将会是投资收益率各种取值的加权平均值。使用数学期望估计预期收益率，计算为：</p>
+<p>$$
+\bar{r} = \sum^n_{i=1}p_ir_i
+$$
+特别的，如果未来收益率概率分布的过去样本点基本服从正态分布，那么也可认为未来投资收益率也服从正态分布。</p>
+<p>风险使用标准差计算：
+$$
+\sigma = \sqrt{\sum^n_{i=1}p_i(r_i -\bar{r})}
+$$</p>
+<ol>
+<li>资产组合投资收益风险</li>
+</ol>
+<p>分散风险，采用投资组合策略。组合收益率将会是所有期望收益率的加权平均值：
+$$
+r_p=\sum^n_{i=1}\omega_i \overline{r_i}
+$$
+风险将会是
+$$
+\sigma_p=\sqrt{\sum^n_{i=1}\omega_i^2 \sigma_i^2+2\sum_{1\le i \lt j \le n}\omega_i \omega_j\sigma_i \sigma_j\rho_{ij}}
+$$
+其中 <span class="arithmatex">\(\rho_{ij}\)</span> 是相关系数，相关系数小于1，分散风险的作用就能体现</p>
+<h3 id="_5">现代投资组合理论<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>一个理性的投资者通常是风险厌恶者，那么实现低风险的有效资产组合式投资管理的核心。</p>
+<p>现代资产组合理论又称证券投资组合理论，经历多次发展迭代。通过资产多元化来分散非系统性风险是资产组合理论的核心思想。</p>
+<p>由于<strong>系统风险</strong>的存在，某些收益率与风险的组合是投资组合无法覆盖的，即无法通过分散化投资来消除。</p>
+<p>我们把投资组合覆盖区域的边界视为我们投资组合的一个极端。<strong>有效边界</strong>是风险相同、收益最大，或收益相同、风险最小组合点的连线。有效边界上的资产组合为有效组合。</p>
+<center><svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" style="background-color: #f5f5f5; border: 1px solid #ccc;">     <defs>         <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">             <path d="M0,0 L0,6 L9,3 z" fill="#000" />         </marker>     </defs>     <line x1="60" y1="350" x2="60" y2="60" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)" />     <line x1="60" y1="350" x2="530" y2="350" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)" />     <text x="20" y="50" class="axis-label" fill="black">期望收益率</text>     <text x="20" y="80" class="math-label" fill="black">E(r)</text>     <text x="500" y="380" class="axis-label" fill="black">风险σ</text>     <path d="M 230 330 C 130 280 100 240 100 200 C 100 160 130 120 520 80" stroke="#000" stroke-width="2" fill="none" />     <circle cx="100" cy="200" r="4" fill="black" />     <text x="75" y="205" class="point-label" fill="black">A</text>     <circle cx="300" cy="122" r="4" fill="black" />          <circle cx="115" cy="165" r="4" fill="black" />     <text x="100" y="160" class="point-label" fill="black">D</text>     <circle cx="300" cy="165" r="4" fill="black" />     <text x="310" y="185" class="point-label" fill="black">C</text>         <circle cx="180" cy="220" r="3" fill="black" />     <circle cx="210" cy="250" r="3" fill="black" />     <circle cx="260" cy="230" r="3" fill="black" />     <circle cx="330" cy="210" r="3" fill="black" />     <circle cx="400" cy="190" r="3" fill="black" />     <circle cx="450" cy="150" r="3" fill="black" />     <circle cx="380" cy="140" r="3" fill="black" />     <circle cx="220" cy="180" r="3" fill="black" />     <circle cx="280" cy="190" r="3" fill="black" />     <circle cx="350" cy="260" r="3" fill="black" />     <circle cx="420" cy="280" r="3" fill="black" />     <circle cx="320" cy="290" r="3" fill="black" />     <circle cx="250" cy="280" r="3" fill="black" />     <circle cx="140" cy="225" r="3" fill="black" />     <circle cx="480" cy="180" r="3" fill="black" />     <circle cx="350" cy="150" r="3" fill="black" />     <circle cx="420" cy="110" r="3" fill="black" />     <circle cx="250" cy="150" r="3" fill="black" />     <circle cx="480" cy="90" r="3" fill="black" />     <circle cx="220" cy="130" r="3" fill="black" />     <circle cx="180" cy="190" r="3" fill="black" />     <circle cx="400" cy="240" r="3" fill="black" />     <circle cx="115" cy="210" r="3" fill="black" />     <circle cx="440" cy="220" r="3" fill="black" /> </svg></center>
+
+<p>如图所示，其中 <span class="arithmatex">\(A\)</span> 点以上就是有效边界的示意。</p>
+<h2 id="_6">利率与有价证券价值评估（重点）<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">有价证券价值评估原理<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>证券的内在价值，是证券未来收益的现值，取决于预期收益与市场收益率水平，也称证券的理论价值。证券的内在价值采用<strong>现金流折现法</strong>计算。</p>
+<ul>
+<li>绝对价值评估：指将公司未来可能创造的现金流或公司未来可能分配的股息，按一定折现率进行折现，来评估公司的内在价值。</li>
+<li>相对价值评估：是通过比较公司的基本面数据和市场数据来确定股票的相对价值。有价证券的相对价值评估通常使用市盈率、市净率等指标。</li>
+</ul>
+<h3 id="_8">绝对价值评估与相对价值评估<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>绝对价值评估</p>
+<ul>
+<li>
+<p>债权价值评估：债券的评估一般比较容易，无论什么支付方式，只要能确定现金流即可。</p>
+</li>
+<li>
+<p>零息债券：没有利息，到期支付一次现金流</p>
+</li>
+</ul>
+<div class="arithmatex">\[
+P_B=\frac{A}{(1+r)^n}
+\]</div>
+<ol>
+<li>
+<p>付息债券：分期付息、到期一次还本
+   $$
+   P_B=\sum^n_{i=1}\frac{C}{(1+r)^t}+\frac{M}{(1+r)^n}
+   $$</p>
+</li>
+<li>
+<p>永续债券：分期付息、无到期日
+   $$
+   P_B=\frac{C}{r}
+   $$</p>
+</li>
+<li>
+<p>股票价值评估：股票收益是不稳定的，现金流折现法计算需要更多工作。对于优先股，价值评估类似于永续债权，而普通股需要全部折算为现值。</p>
+</li>
+</ol>
+<div class="arithmatex">\[
+P=\sum^{\infty}_{i=1}\frac{C_i}{(1+r)^i}
+\]</div>
+<p>假定分红等比上升，预期增长率 <span class="arithmatex">\(g\)</span> 小于 <span class="arithmatex">\(r\)</span>，<span class="arithmatex">\(C_0\)</span> 为当期每股收益，则
+$$
+P_s=\sum^\infty_{i=1}\frac{C_0(1+g)^t}{(1+r)^t}=\frac{(1+g)C_0}{r-g}
+$$
+相对价值评估</p>
+<ul>
+<li>市盈率 (PE) = 股票市价 / 每股盈余：越低，回收期越短，投资价值越大</li>
+<li>市净率 (PB) = 股票市价 / 每股净资产：越低，投资价值越高，反之则反</li>
+</ul>
+<h3 id="_9">金融市场定价模型（重点）<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h4 id="mpt">马科维茨模型 MPT<a class="headerlink" href="#mpt" title="Permanent link">&para;</a></h4>
+<p>如上所述，就是现代资产组合投资理论的前身。</p>
+<p>核心思想是分散化投资，构建不同资产组合降低<strong>整体风险</strong>。</p>
+<ul>
+<li>风险估计：使用 <span class="arithmatex">\(\sigma\)</span> 和 <span class="arithmatex">\(\sigma^2\)</span> 度量</li>
+<li>相关组合：相关系数 <span class="arithmatex">\(\rho&lt;1\)</span> 分散化就能起作用</li>
+<li>有效边界：所有最优组合</li>
+</ul>
+<p>这就是我们刚刚提及的有效边界理论。</p>
+<p>缺点在于：计算量巨大，不可能简便计算 <span class="arithmatex">\(N\)</span> 个元素的数学期望，方差和 <span class="arithmatex">\(N(N-1)/2\)</span> 个协方差。同时，找了半天有效前沿，但<strong>没告诉投资者到底该选哪一个点</strong>。</p>
+<h4 id="capm">资本资产定价模型 CAPM<a class="headerlink" href="#capm" title="Permanent link">&para;</a></h4>
+<p>核心思想是风险定价，既然非系统风险可以被分散掉，市场只为<strong>系统性风险</strong>提供回报。</p>
+<p>公式示意：
+$$
+\overline{r_a}=r_f+\beta_{\alpha}(\overline{r_m}-r_f)
+$$</p>
+<ul>
+<li>风险拆分：风险分为系统性和非系统性</li>
+<li>贝塔值<span class="arithmatex">\(\beta\)</span>：系统性风险度量，衡量这个投资组合和大盘的风险关系</li>
+<li>资本市场线：CML描述<strong>有效组合</strong>的风险收益关系</li>
+<li>证券市场线：SML描述<strong>所有资产</strong>的风险收益关系</li>
+</ul>
+<p>无效组合位于 CML 下方，低估股票位于 SML 上方（买！）</p>
+<p>缺点在于：假设太多，假定了市场有效、投资者同质、市场组合也可知（然而谁也不知道真正的市场组合将会是什么），CAPM 还依赖于<strong>效用理论</strong>（投资者优化均值-方差）和<strong>市场均衡</strong>；同时，某些实证检验效果也不好，<span class="arithmatex">\(\beta\)</span> 系数不完全能解释股票收益率差异。</p>
+<h4 id="_10">有效市场假说<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>核心思想是信息有效性，假定资产价格已经充分反映了所有<strong>可获取的信息</strong>。 市场太聪明了，你<strong>战胜不了市场</strong>。</p>
+<ul>
+<li>弱式有效：价格已经反映历史价格信息，则技术分析无效（看K线图没用了）</li>
+<li>半强式有效：价格已经反映所有公开信息（财报、历史价格、新闻），则基本面分析无效（ 看财报/新闻没用了）</li>
+<li>强式有效：价格反映所有信息（公开加内幕信息全都没用了）</li>
+</ul>
+<p>解决了市场对信息反应速度的问题，回答了“我们能否打败市场”的问题</p>
+<p>缺点在于：现实中存在大量<strong>异象 (Anomalies)</strong>，如小盘股效应、价值效应、动量效应等，无法被EMH解释，行为金融学对其提出了巨大挑战（因为投资者不是完全理性的）</p>
+<h4 id="apt">套利定价理论 APT<a class="headerlink" href="#apt" title="Permanent link">&para;</a></h4>
+<p>核心思想是无套利均衡，资产收益率是由一系列宏观经济因子共同决定的，而不仅仅是单一市场因子：通胀、GDP、油价等<strong>好几个爹（多因子）</strong></p>
+<ul>
+<li>多因子模型：
+  $$
+  E(R)=R_f+\beta_1\lambda_1+\cdots
+  $$</li>
+<li>因子：可能是GDP，通胀、利率变化乃至油价</li>
+<li>无套利原理：风险相同的资产，其预期收益率必然相同。</li>
+</ul>
+<p>APT 依赖于<strong>无套利原理</strong>（No-Arbitrage），不需要假设投资者也是理性的，也不需要假设市场组合存在。这是 APT 与 CAPM 的本质区别。</p>
+<p>缺点：APT 没有告诉我们这些因子具体是什么，难道让我自己去找吗？</p>
+<h4 id="ff">FF三因子模型<a class="headerlink" href="#ff" title="Permanent link">&para;</a></h4>
+<p>了解即可，提出者是尤金·法马和柯尼斯·弗伦奇。</p>
+<p>核心思想是价值与规模，在CAPM市场风险因子上又加入了两个实证证明能解释收益率差异的因子。</p>
+<ul>
+<li>市场风险因子：<span class="arithmatex">\((R_m-R_f)\)</span>，在CAPM已经阐释</li>
+<li>规模因子（SMB）：小盘股组合收益率 - 大盘股组合收益率</li>
+<li>价值因子（HML）：高账面市值比组合收益率 - 低账面是指比组合收益率</li>
+</ul>
+<p><strong>SMB &gt; 0：</strong> 说明<strong>小盘股</strong>长期跑赢大盘股（小盘股效应）。</p>
+<p><strong>HML &gt; 0：</strong> 说明<strong>价值股</strong>（高账面市值比）长期跑赢成长股（价值效应）</p>
+<p>该模型大大提高了对股票收益率的解释力，成为学术界和业界最常用的多因子模型之一。</p>
+<p>缺点：缺乏理论基础：，这两个因子是“凑数据”凑出来的，为什么它们能赚钱？Fama 自己也说不清，他认为这可能是对未知风险的补偿，后来又出现了动量因子（Carhart 四因子模型）和更多因子（Fama - French 五因子模型），如此下去可能变成超级无套利模型。</p>
+<p>当然，严格来说金融市场确实是无比混沌随时改变的，无数的因子在此交互作用，感兴趣的朋友可以搜集混沌系统与金融学的关系。</p>
+<center><svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px;">     <defs>         <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">             <path d="M0,0 L0,6 L9,3 z" fill="#555" />         </marker>         <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">             <feGaussianBlur in="SourceAlpha" stdDeviation="2" />             <feOffset dx="2" dy="2" result="offsetblur" />             <feComponentTransfer>                 <feFuncA type="linear" slope="0.3" />             </feComponentTransfer>             <feMerge>                 <feMergeNode />                 <feMergeNode in="SourceGraphic" />             </feMerge>         </filter>     </defs>          <text x="400" y="40" font-size="24" font-weight="bold" fill="#333" text-anchor="middle">现代金融理论演进路径</text>      <!-- 节点1: MPT -->     <g transform="translate(50, 100)">         <rect x="0" y="0" width="180" height="80" rx="10" ry="10" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" filter="url(#shadow)" />         <text x="90" y="35" font-size="18" font-weight="bold" fill="#0d47a1" text-anchor="middle">MPT</text>         <text x="90" y="60" font-size="14" fill="#555" text-anchor="middle">理论起点</text>     </g>      <!-- 节点2: CAPM -->     <g transform="translate(310, 100)">         <rect x="0" y="0" width="180" height="80" rx="10" ry="10" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" filter="url(#shadow)" />         <text x="90" y="35" font-size="18" font-weight="bold" fill="#1b5e20" text-anchor="middle">CAPM</text>         <text x="90" y="60" font-size="14" fill="#555" text-anchor="middle">简化与均衡</text>     </g>      <!-- 节点3: EMH -->     <g transform="translate(570, 100)">         <rect x="0" y="0" width="180" height="80" rx="10" ry="10" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2" filter="url(#shadow)" />         <text x="90" y="35" font-size="18" font-weight="bold" fill="#4a148c" text-anchor="middle">EMH</text>         <text x="90" y="60" font-size="14" fill="#555" text-anchor="middle">补充与挑战</text>     </g>      <!-- 节点4: APT -->     <g transform="translate(310, 280)">         <rect x="0" y="0" width="180" height="80" rx="10" ry="10" fill="#fff3e0" stroke="#ff9800" stroke-width="2" filter="url(#shadow)" />         <text x="90" y="35" font-size="18" font-weight="bold" fill="#e65100" text-anchor="middle">APT</text>         <text x="90" y="60" font-size="14" fill="#555" text-anchor="middle">对CAPM的改进</text>     </g>      <!-- 节点5: F-F三因子 -->     <g transform="translate(570, 280)">         <rect x="0" y="0" width="180" height="80" rx="10" ry="10" fill="#ffebee" stroke="#f44336" stroke-width="2" filter="url(#shadow)" />         <text x="90" y="35" font-size="18" font-weight="bold" fill="#b71c1c" text-anchor="middle">F-F 三因子</text>         <text x="90" y="60" font-size="14" fill="#555" text-anchor="middle">具体化与实证</text>     </g>      <!-- 连接线 -->     <!-- MPT -> CAPM -->     <line x1="230" y1="140" x2="300" y2="140" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />          <!-- CAPM -> EMH -->     <line x1="490" y1="140" x2="560" y2="140" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />      <!-- CAPM -> APT (向下分支) -->     <path d="M 400 180 L 400 230 L 400 270" stroke="#555" stroke-width="2" marker-end="url(#arrow)" fill="none" />      <!-- APT -> F-F -->     <line x1="490" y1="320" x2="560" y2="320" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />      <!-- 说明标签 (可选) -->     <text x="410" y="240" font-size="12" fill="#777" font-style="italic">放宽假设 / 多因子引入</text>  </svg></center>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../finance5/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 利息利率">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                利息利率
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../finance7/" class="md-footer__link md-footer__link--next" aria-label="Next: 金融机构">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                金融机构
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 - 2030 Not a real copyright
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/HarudogMyLand" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
