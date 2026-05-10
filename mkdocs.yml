@@ -63,6 +63,8 @@ theme:
 # Plugins
 plugins:
   - blog
+  - kroki:
+      ServerURL: "https://kroki.io"
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
 
