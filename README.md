@@ -11,8 +11,8 @@ about.md
 │   ├── 📁 microeco
 │   │   ├── 📁 assets
 │   │   ├── 📄 tutorial.md
-│   ├── 📁 physics
-│   │   └── 📄 tutorial.md
 │   ├── 📄 about.md
 │   └── 📄 index.md
 ```
+
+每次提交并推送后使用`mkdocs gh-deploy`更新。
