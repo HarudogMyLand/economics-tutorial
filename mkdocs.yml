@@ -149,4 +149,10 @@ nav:
   - 宏观经济:
     - 宏观导论: macroeco/0.md
     
+  - 金融工程:
+    - 第一章: FE/fe1.md
+    - 第二章: FE/fe2.md
+    - 第三章: FE/fe3.md
+    - 第四章: FE/fe4.md
+    - 第五章: FE/fe5.md
   - About: about.md
