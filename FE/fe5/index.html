@@ -1661,22 +1661,22 @@ $$
 <p>从远期合约标准定义来说，交易双方在当下（交易日）约定标的资产的交易价格、交易数量、交割规则，约定在<strong>未来某一特定日期</strong>才实际完成交割 / 履约的场外合约。尽管利率是一个指数，不像股票证券一样存在，但是它被约定在未来进行确定性的交割，就可以被称为利率。</p>
 <p>远期利率公式非常简单，同笔资金两条投资路径复利终值相等：已知除了<span class="arithmatex">\(r_f\)</span>的所有数据，很容易计算出<span class="arithmatex">\(r_f\)</span>！</p>
 <p>远期利率协议的价值：远期利率协议是零和的，多空双方FRA价值之和必然为0，理想公平情况下，定价使得远期利率协议价值为0，此时双方协议价值都为0。</p>
-<p>具体而言我们考虑一份FRA，时刻为<span class="arithmatex">\(t\)</span>，名义本金为<span class="arithmatex">\(A\)</span>，多空双方期限始末点为<span class="arithmatex">\(T, T^*\)</span>，协议利率为<span class="arithmatex">\(r_K\)</span>，假定合理无套利的协议利率应当为<span class="arithmatex">\(r_F\)</span>，在二者不相等的情况下：
-$$
-(Ae^{r_F(T^<em>-T)}-Ae^{r_K \cdot (T^</em>-T)})\cdot e^{-r^<em> (T^</em>-t)}
-$$
-看起来恐怖实际上一点也不复杂，按市场公允远期利率<span class="arithmatex">\(r_F\)</span> 计息，本金 A 到期本息和：
-$$
-A e^{r_F \cdot (T^<em>-T)}
-$$
-按合约协议利率  <span class="arithmatex">\(r_K\)</span> 计息，本金 A 到期本息和：
-$$
-A e^{r_K \cdot (T^</em>-T)}
-$$
-两者的差值，就是 <span class="arithmatex">\(T^*\)</span> 时点上 FRA 的净现金流（利息差）：</p>
+<p>具体而言我们考虑一份FRA，时刻为<span class="arithmatex">\(t\)</span>，名义本金为<span class="arithmatex">\(A\)</span>，多空双方期限始末点为<span class="arithmatex">\(T, T^*\)</span>，协议利率为<span class="arithmatex">\(r_K\)</span>，假定合理无套利的协议利率应当为<span class="arithmatex">\(r_F\)</span>，在二者不相等的情况下：</p>
 <div class="arithmatex">\[
-CF_{T^*} = A e^{r_F \tau} - A e^{r_K \tau} \quad (\tau=T^*-T)
+(Ae^{r_F(T^*-T)}-Ae^{r_K \cdot (T^*-T)})\cdot e^{-r^* (T^*-t)}
 \]</div>
+<p>看起来恐怖实际上一点也不复杂，按市场公允远期利率<span class="arithmatex">\(r_F\)</span> 计息，本金 A 到期本息和：</p>
+<div class="arithmatex">\[
+A e^{r_F \cdot (T^*-T)}
+\]</div>
+<p>按合约协议利率  <span class="arithmatex">\(r_K\)</span> 计息，本金 A 到期本息和：</p>
+<div class="arithmatex">\[
+A e^{r_K \cdot (T^*-T)}
+\]</div>
+<p>两者的差值，就是 <span class="arithmatex">\(T^*\)</span> 时点上 FRA 的净现金流（利息差）：
+$$
+CF_{T^<em>} = A e^{r_F \tau} - A e^{r_K \tau} \quad (\tau=T^</em>-T)
+$$</p>
 <p>把 <span class="arithmatex">\(CF_{T^*}\)</span>代入折现公式：</p>
 <div class="arithmatex">\[
 V(t) = \big[A e^{r_F (T^*-T)} - A e^{r_K (T^*-T)}\big] \cdot e^{-r^* (T^*-t)}
